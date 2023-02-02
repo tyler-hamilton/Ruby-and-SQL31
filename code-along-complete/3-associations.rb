@@ -15,14 +15,14 @@ Contact.destroy_all
 # first query to find the row in companies for Apple
 apple = Company.find_by({ "name" => "Apple" })
 
-contact = Contact.new
+contact = Contacts.new
 contact["first_name"] = "Tim"
 contact["last_name"] = "Cook"
 contact["email"] = "tim@apple.com"
 contact["company_id"] = apple["id"]
 contact.save
 
-contact = Contact.new
+contact = Contacts.new
 contact["first_name"] = "Craig"
 contact["last_name"] = "Federighi"
 contact["email"] = "craig@apple.com"
@@ -31,12 +31,12 @@ contact.save
 
 amazon = Company.find_by({ "name" => "Amazon" })
 
-contact = Contact.new
+contact = Contacts.new
 contact["first_name"] = "Jeff"
 contact["last_name"] = "Bezos"
 contact["email"] = "jeff@amazon.com"
 contact["company_id"] = amazon["id"]
-contact.save
+contacts.save
 
 puts "There are #{Company.all.count} companies"
 puts "There are #{Contact.all.count} contacts"

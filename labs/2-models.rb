@@ -26,6 +26,28 @@ Salesperson.destroy_all
 # ---------------------------------
 # Salespeople: 2
 
+new_salesperson = Salesperson.new
+new_salesperson["first_name"] = "Ben"
+new_salesperson["last_name"] = "Long"
+new_salesperson ["email"] = "ben.long@kellogg.northwestern.edu"
+new_salesperson.save
+
+new_salesperson = Salesperson.new
+new_salesperson["first_name"] = "Tyler"
+new_salesperson["last_name"] = "Hamilton"
+new_salesperson ["email"] = "tyler.hamilton@kellogg.northwestern.edu"
+new_salesperson.save
+
+puts "There are #{Salesperson.all.count} Sales People"
+puts "Their contact is below:"
+all_salespeople = Salesperson.all
+for person in all_salespeople
+    first_name = person["first_name"]
+    last_name = person["last_name"]
+    email = person["email"]
+    puts "#{first_name} #{last_name} - #{email}"
+end
+
 # 4. modify/update column data for a row in the salespeople table.
 
 # CHALLENGE:
